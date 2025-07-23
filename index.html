@@ -3,243 +3,404 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Ahmed Abrar | Full Stack Developer</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tangerine:wght@700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="style.css">
-  
-  <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Tangerine">
 </head>
 <body>
+  <!-- Intro Animation -->
+  <div class="intro-animation">
+    <div class="intro-logo">
+      <div class="logo-circle"></div>
+      <div class="logo-text1">Hello</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
   <header>
-    <nav>
-      <div class="left"><img src="images\profile.png" alt="Image" class="thumbnail" onclick="showPopup(this.src)"><p>Ahmed Abrar</p></div>
+    <nav id="navbar" class="fixed-nav" id="home">
+      <a href="#home" class="logo">
+        <img src="images/profile.png" alt="Ahmed Abrar" class="logo-img"><span class="logo-text2">Ahmed Abrar</span>
+      </a>
+      
       <div class="hamburger" id="hamburger">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
-      </div>      
+      </div>
+      
       <ul class="nav-links" id="nav-links">
-        <li><a href="#fs">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#footer">Connect</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
       </ul>
-      
     </nav>
-</header> 
-<main>
-  <section class="firstSection" id="fs">
-      <div class="leftSection">
-        <pre>HI MY NAME IS <span class="purple">ILHAM</span>
-AND I AM A PASSIONATE</pre>
-        <span id="element"></span>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Hi, I'm <span>Ahmed Abrar</span></h1>
+        <p class="hero-subtitle">A passionate <span id="element"></span></p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn ">Order Your First Website</a>
+          <a href="projects.html" class="btn btn-outline">View My Projects</a>
+        </div>
       </div>
-      <div class="rightSection">
-          <img src="images\laptop.gif" alt="Profile Image">
+      <img src="F:\download-removebg-preview (1).png" alt="Developer Illustration" class="hero-image">
+    </section>
+</header>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <p class="about-text">
+          I am a Full Stack Developer passionate about building scalable and user-friendly web applications. 
+          With expertise in both front-end and back-end development, I specialize in creating dynamic user 
+          interfaces and powerful back-end solutions. I specialized MERN stack development, which includes MongoDB, Express.js, React.js, and Node.js. 
+          I have a
+        </p>
+        <p class="about-text">
+          I enjoy solving complex problems, learning new technologies, and collaborating on innovative projects. 
+          My goal is to build seamless web experiences that make a meaningful impact.
+          I am always eager to learn and adapt to new challenges in the ever-evolving tech landscape.
+          Feel free to collaborate with me on exciting projects or reach out for any inquiries. I'll be happy to connect and discuss how we can work together to create something amazing.
+        </p>
+        
+        <div class="skills-list">
+          <div class="skill-item">
+            <div class="skill-title">
+              <i class="fas fa-laptop-code skill-icon"></i>
+              <h3>Frontend Development</h3>
+            </div>
+            <p>Crafting responsive and interactive UIs with HTML, CSS, JavaScript & modern frameworks.</p>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-title">
+              <i class="fas fa-server skill-icon"></i>
+              <h3>Backend Development</h3>
+            </div>
+            <p>Developing secure and efficient RESTful APIs using Node.js & Express.js.</p>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-title">
+              <i class="fas fa-database skill-icon"></i>
+              <h3>Database Management</h3>
+            </div>
+            <p>Managing databases and optimizing performance with MongoDB and SQL.</p>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-title">
+              <i class="fas fa-mobile-alt skill-icon"></i>
+              <h3>Responsive Design</h3>
+            </div>
+            <p>Creating websites that work perfectly on all devices and screen sizes.</p>
+          </div>
+        </div>
       </div>
+    </div>
   </section>
-  <hr>
-</main>
-<!-- About Me -->
- <div class="about" id="about">
-<h1 class="About-Header">About Me</h1>
-<p class="para">I am a Full Stack Developer passionate about building scalable and user-friendly web applications. With expertise in both front-end and back-end development, I specialize in creating dynamic user interfaces and powerful back-end solutions. I love to learn new technologies and stay updated with industry trends. Feel free to connect with me!</p>
-   <ul>
-    <li>✅ Crafting responsive and interactive UIs with HTML, CSS, JavaScript & modern CSS frameworks.</li>
-    <li>✅ Developing secure and efficient RESTful APIs using Node.js & Express.js.</li>
-    <li>✅ Managing databases and optimizing performance with MongoDB.</li>
-    <li>✅ Implementing authentication, state management, and real-time functionalities.</li>
-   </ul>
-   <p class="para">I enjoy solving complex problems, learning new technologies, and collaborating on innovative projects. My goal is to build seamless web experiences that make a meaningful impact.   </p>
-    <hr>
-</div>
-<!-- My projects -->
-<section id="projects" class="projects-section">
-  <div class="container">
-      <h2 class="section-title ">My Projects</h2>
-      <p class="section-subtitle">A collection of my latest work and projects.</p>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title">My Services</h2>
+      <p class="section-subtitle">What I can do for you</p>
       
-      <div class="projects-grid">
-          <!-- Project 1 -->
-          <div class="project-card">
-              <img src="images/NexaImg.png" alt="Project 1" class="project-image" class="thumbnail" onclick="showPopup(this.src)">
-              <div class="project-info">
-                  <h3 class="project-title">Marketing Website Nexa</h3>
-                  <p class="project-description">It's a AI Powered Modern Marketing website. Focused on Extreme UI Animation</p>
-                  <a href="" class="project-link">View Project</a>
-              </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
           </div>
-
-          <!-- Project 2 -->
-          <div class="project-card">
-            <img src="images\proj2.jpeg" alt="Project 2" class="project-image" class="thumbnail" onclick="showPopup(this.src)">
-              <div class="project-info">
-                  <h3 class="project-title">Todo App</h3>
-                  <p class="project-description">It's a Todo App That will help you to track your daily Works</p>
-                  <a href="https://programmer-ilham.github.io/Todo-App/src/todo.html" class="project-link">View Project</a>
-              </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="project-card">
-              <img src="images\proj3.jpeg" alt="Project 3" class="project-image" class="thumbnail" onclick="showPopup(this.src)">
-              <div class="project-info">
-                  <h3 class="project-title">Tic-Tac-Toe</h3>
-                  <p class="project-description">It's a TIc-tac-toe game.</p>
-                  <a href="https://programmer-ilham.github.io/Tic-Tac-Toe/" class="project-link">View Project</a>
-              </div>
-          </div>
-          <div class="project-card">
-            <img src="images\proj1.jpeg" alt="Project 1" class="project-image" class="thumbnail" onclick="showPopup(this.src)">
-            <div class="project-info">
-                <h3 class="project-title">Modern E-Commerce Website</h3>
-                <p class="project-description">It's a Modern E-Commerce website build on HTML, CSS and Advanced JavaScript</p>
-                <a href="https://programmer-ilham.github.io/Modern-E-commerce-Website/" class="project-link">View Project</a>
-            </div>
+          <h3 class="service-title">Frontend Development</h3>
+          <p class="service-description">
+            I create responsive and interactive user interfaces using modern web technologies.
+          </p>
+          <ul class="service-features">
+            <li>Responsive Web Design</li>
+            <li>Cross-Browser Compatibility</li>
+            <li>Performance Optimization</li>
+            <li>Accessibility Implementation</li>
+          </ul>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-          <img src="images\proj2.jpeg" alt="Project 2" class="project-image" class="thumbnail" onclick="showPopup(this.src)">
-            <div class="project-info">
-                <h3 class="project-title">Todo App</h3>
-                <p class="project-description">It's a Todo App That will help you to track your daily Works</p>
-                <a href="https://programmer-ilham.github.io/Todo-App/src/todo.html" class="project-link">View Project</a>
-            </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3 class="service-title">Backend Development</h3>
+          <p class="service-description">
+            I build robust and scalable backend systems with secure APIs and databases.
+          </p>
+          <ul class="service-features">
+            <li>API Development</li>
+            <li>Database Design</li>
+            <li>Authentication & Authorization</li>
+            <li>Server Deployment</li>
+          </ul>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-card">
-            <img src="images\proj3.jpeg" alt="Project 3" class="project-image" class="thumbnail" onclick="showPopup(this.src)">
-            <div class="project-info">
-                <h3 class="project-title">Project Title 3</h3>
-                <p class="project-description">A brief description of the project. Highlight the technologies used and the problem solved.</p>
-                <a href="https://programmer-ilham.github.io/Tic-Tac-Toe/" class="project-link">View Project</a>
-            </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="service-title">Full-Stack Solutions</h3>
+          <p class="service-description">
+            End-to-end web development services tailored to your business needs.
+          </p>
+          <ul class="service-features">
+            <li>End-to-End Development</li>
+            <li>Project Management</li>
+            <li>Continuous Integration</li>
+            <li>Maintenance & Support</li>
+          </ul>
         </div>
-
-          <!-- Add more projects as needed -->
       </div>
+    </div>
+  </section>
+  <!-- Skills -->
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+  <div class="container">
+    <h2 class="section-title">My <span>Skills</span></h2>
+    <p class="section-subtitle">Technologies I work with</p>
+    
+    <div class="skills-grid">
+      <!-- Skill Item 1 -->
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fab fa-html5"></i>
+        </div>
+        <h3>HTML5</h3>
+        <div class="skill-progress">
+          <div class="progress-bar" data-level="95%"></div>
+        </div>
+        <span class="skill-percent">95%</span>
+      </div>
+      
+      <!-- Skill Item 2 -->
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fab fa-css3-alt"></i>
+        </div>
+        <h3>CSS3</h3>
+        <div class="skill-progress">
+          <div class="progress-bar" data-level="90%"></div>
+        </div>
+        <span class="skill-percent">90%</span>
+      </div>
+      
+      <!-- Skill Item 3 -->
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fab fa-js"></i>
+        </div>
+        <h3>JavaScript</h3>
+        <div class="skill-progress">
+          <div class="progress-bar" data-level="85%"></div>
+        </div>
+        <span class="skill-percent">85%</span>
+      </div>
+      
+      <!-- Add more skills as needed -->
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fab fa-react"></i>
+        </div>
+        <h3>React</h3>
+        <div class="skill-progress">
+          <div class="progress-bar" data-level="80%"></div>
+        </div>
+        <span class="skill-percent">80%</span>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fab fa-bootstrap"></i>
+        </div>
+        <h3>Bootstrap</h3>
+        <div class="skill-progress">
+          <div class="progress-bar" data-level="90%"></div>
+        </div>
+        <span class="skill-percent">90%</span>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fab fa-node-js"></i>
+        </div>
+        <h3>Node.js</h3>
+        <div class="skill-progress">
+          <div class="progress-bar" data-level="75%"></div>
+        </div>
+        <span class="skill-percent">75%</span>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fab fa-stacks"></i>
+        </div>
+        <h3>MongoDB</h3>
+        <div class="skill-progress">
+          <div class="progress-bar" data-level="75%"></div>
+        </div>
+        <span class="skill-percent">75%</span>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fab fa-java"></i>
+        </div>
+        <h3>Java</h3>
+        <div class="skill-progress">
+          <div class="progress-bar" data-level="50%"></div>
+        </div>
+        <span class="skill-percent">50%</span>
+      </div>
+    </div>
   </div>
 </section>
- <!-- My Services -->
- <h1 class="serv-header" id="services">Our Services</h1>
-<div class="Services">
-  
-  <div class="prod">
-    <h1>Frontend Development</h1>
-    <p>
-      I specialize in creating responsive and user-friendly interfaces using modern web technologies like HTML, CSS, and JavaScript. Whether it's building a website from scratch or optimizing an existing one, I ensure a seamless user experience across all devices.
-    </p>
-    <ul>
-      <li>Responsive Web Design</li>
-      <li>Cross-Browser Compatibility</li>
-      <li>Performance Optimization</li>
-      <li>Accessibility (a11y) Implementation</li>
-    </ul>
-  </div>
-
-  <div class="prod">
-    <h1>Backend Development</h1>
-    <p>
-      I build robust and scalable backend systems using technologies like Node.js, Express, and databases such as MongoDB and MySQL. From APIs to server-side logic, I ensure your application runs smoothly and securely.
-    </p>
-    <ul>
-      <li>API Development</li>
-      <li>Database Design</li>
-      <li>Authentication & Authorization</li>
-      <li>Server Deployment</li>
-    </ul>
-  </div>
-
-  <div class="prod">
-    <h1>Full-Stack Solutions</h1>
-    <p>
-      Offering end-to-end web development services, I handle both frontend and backend development to deliver complete solutions tailored to your business needs. From concept to deployment, I ensure your project is a success.
-    </p>
-    <ul>
-      <li>End-to-End Development</li>
-      <li>Project Management</li>
-      <li>Continuous Integration & Deployment</li>
-      <li>Maintenance & Support</li>
-    </ul>
-  </div>
-</div>
-</div>
-
-<div class="contact-form" id="contact">
-  <h2>Contact Me</h2>
-  <form id="contactForm" action="https://formspree.io/f/xldgzved" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <span id="nameError" class="error-message"></span>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <span id="emailError" class="error-message"></span>
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <span id="messageError" class="error-message"></span>
-    <button type="submit">Send</button>
-  </form>
-  <div id="loadingSpinner" class="loading-spinner"></div>
-  <div id="successMessage" class="success-message"></div>
-</div>
-
-
-  <footer class="big-footer">
-    <div class="footer-container" id="footer">
-        <!-- Contact Information -->
-        <div class="footer-section">
-            <h3 class="footer-heading">Contact Me</h3>
-            <ul class="footer-list">
-                <li><a href="tel:+880 1330910019">📞 +880 1330910019</a></li>
-                <li><a href="mailto:abrarilhamprogrammer@gmail.com">📧 abrarilhamprogrammer@gmail.com</a></li>
-                <li><a href="https://wa.me/1330910019 target="_blank">💬 WhatsApp</a></li>
-                <li><a href="https://www.facebook.com/ahmed.abrar.ilham" target="_blank">💬 Messenger</a></li>
-            </ul>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Have a project in mind or want to collaborate?</p>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <h3>Email</h3>
+              <a href="mailto:abrarilhamprogrammer@gmail.com">abrarilhamprogrammer@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-text">
+              <h3>Phone</h3>
+              <a href="tel:+8801330910019">+880 1330910019</a>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h3>Location</h3>
+              <p>Chaittagong, Bangladesh</p>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <a href="https://www.facebook.com/ahmed.abrar.ilham" class="social-link" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://x.com/AhmedAbrar_13" class="social-link" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://github.com/Programmer-Ilham" class="social-link" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com" class="social-link" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
         </div>
-
-        <!-- Social Media Links -->
-        <div class="footer-section">
-            <h3 class="footer-heading">Follow Me</h3>
-            <ul class="footer-list social-media">
-                <li><a href="https://www.facebook.com/ahmed.abrar.ilham" target="_blank"> Facebook</a></li>
-                <li><a href="https://x.com/AhmedAbrar_13" target="_blank"> Twitter</a></li>
-                <li><a href="https://instagram.com" target="_blank"> Instagram</a></li>
-                <li><a href="https://linkedin.com" target="_blank"> LinkedIn</a></li>
-                <li><a href="https://github.com/Programmer-Ilham" target="_blank"> GitHub</a></li>
-            </ul>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-section">
-            <h3 class="footer-heading">Quick Links</h3>
-            <ul class="footer-list">
-                <li><a href="#fs">🏠 Home</a></li>
-                <li><a href="#about">👤 About</a></li>
-                <li><a href="#projects">💼 Projects</a></li>
-                <li><a href="#contact">📞 Contact</a></li>
-            </ul>
-        </div>
+        
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xldgzved" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+            <span id="nameError" class="error-message"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+            <span id="emailError" class="error-message"></span>
+          </div>
+          
+          <div class="form-group">
+            <textarea class="form-control" name="message" placeholder="Your Message" required></textarea>
+            <span id="messageError" class="error-message"></span>
+          </div>
+          
+          <button type="submit" class="btn">Send Message</button>
+          
+          <div id="loadingSpinner" class="loading-spinner">
+            <div class="spinner"></div>
+          </div>
+          
+          <div id="successMessage" class="success-message">
+            Message sent successfully! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
     </div>
+  </section>
 
-    <!-- Footer Bottom -->
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Ahmed Abrar</h3>
+        <p>Full Stack Developer passionate about building scalable and user-friendly web applications.</p>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul class="footer-links">
+          <li><a href="#services">Frontend Development</a></li>
+          <li><a href="#services">Backend Development</a></li>
+          <li><a href="#services">Full-Stack Solutions</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:abrarilhamprogrammer@gmail.com">abrarilhamprogrammer@gmail.com</a></li>
+          <li><a href="tel:+8801330910019">+880 1330910019</a></li>
+          <li>Chaittagong, Bangladesh</li>
+        </ul>
+      </div>
+    </div>
     <div class="footer-bottom">
-        <p>© 2025 Ahmed Abrar. All rights reserved.</p>
-        <p>Made with  ❤️ </p>
+      <p>&copy; <span id="year"></span> Ahmed Abrar. All rights reserved.</p>
     </div>
-</footer>
-<div class="popup" id="popup" onclick="hidePopup()">
-  <img id="popup-img" src="">
-</div>
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
- <script>
-    var typed = new Typed('#element', {
-      strings: ['UI Designer','Full Stack Web Developer'],
-      typeSpeed: 50,
-    }); 
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
- <script src="script.js"></script>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-

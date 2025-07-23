@@ -1,81 +1,121 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('contactForm');
-  const nameError = document.getElementById('nameError');
-  const emailError = document.getElementById('emailError');
-  const messageError = document.getElementById('messageError');
-  
-  
-  form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent the default form submission
+document.addEventListener('DOMContentLoaded', () => {
+  // Intro animation removal
+  setTimeout(() => {
+    document.querySelector('.intro-animation').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }, 2000);
 
-    // Reset error messages
-    nameError.textContent = "";
-    emailError.textContent = "";
-    messageError.textContent = "";
+  // Typed.js initialization
+  const typed = new Typed('#element', {
+    strings: ['Full Stack Web Developer', 'frontend Developer', 'Backend Developer', 'In one word Web Developer', 'UI Designer', 'Problem Solver'],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 1500,
+    loop: true,
+    showCursor: true,
+    cursorChar: '|',
+    startDelay: 3500
+  });
 
-    // Validate name
-    if (form.name.value.trim() === "") {
-      nameError.textContent = "Name is required.";
-      nameError.style.display = "block";
-      return;
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
 
-    // Validate email
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(form.email.value)) {
-      emailError.textContent = "Please enter a valid email address.";
-      emailError.style.display = "block";
-      return;
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    if (window.scrollY > 300) {
+      backToTop.classList.add('active');
+    } else {
+      backToTop.classList.remove('active');
     }
+  });
 
-    // Validate message
-    if (form.message.value.trim() === "") {
-      messageError.textContent = "Message is required.";
-      messageError.style.display = "block";
-      return;
-    }
-
-    // Show the loading spinner
-    document.getElementById('loadingSpinner').style.display = "block";
-
-    fetch("https://formspree.io/f/xldgzved", {
-      method: "POST",
-      body: new FormData(form),
-      headers: {
-        "Accept": "application/json"
-      }
-    })
-    .then(response => {
-      // Hide the loading spinner
-      document.getElementById('loadingSpinner').style.display = "none";
-
-      if (response.ok) {
-        document.getElementById('successMessage').textContent = "Message sent successfully!";
-        document.getElementById('successMessage').style.display = "block"; // Show the message
-        form.reset(); // Clear the form
-      } else {
-        alert("Oops! Something went wrong.");
-      }
-    })
-    .catch(error => {
-      console.error("Error submitting form:", error);
-      alert("Oops! Something went wrong.");
+  // Back to top functionality
+  document.getElementById('backToTop').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
 
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
   });
-});
-function showPopup(src) {
-    document.getElementById('popup-img').src = src;
-    document.getElementById('popup').style.display = 'flex';
+
+  // Close mobile menu when clicking a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+
+  // Form submission
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Show loading spinner
+      document.getElementById('loadingSpinner').style.display = 'block';
+      
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          contactForm.reset();
+          document.getElementById('successMessage').style.display = 'block';
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      } finally {
+        document.getElementById('loadingSpinner').style.display = 'none';
+      }
+    });
   }
 
-  function hidePopup() {
-    document.getElementById('popup').style.display = 'none';
-  }
+  // Set current year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+});
+// Animate progress bars when section comes into view
+document.addEventListener('DOMContentLoaded', function() {
+  const progressBars = document.querySelectorAll('.progress-bar');
+  
+  const animateProgressBars = () => {
+    progressBars.forEach(bar => {
+      const targetWidth = bar.getAttribute('data-level');
+      bar.style.width = targetWidth;
+    });
+  };
+
+  // Intersection Observer to trigger animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateProgressBars();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(document.querySelector('.skills-section'));
+});
