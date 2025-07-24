@@ -45,22 +45,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Hamburger menu toggle
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
+  // const hamburger = document.getElementById('hamburger');
+  // const navLinks = document.getElementById('nav-links');
+  // const navCta = document.getElementById('nav-cta');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
+  // hamburger.addEventListener('click', () => {
+  //   hamburger.classList.toggle('active');
+  //   navLinks.classList.toggle('active');
+  // });
 
-  // Close mobile menu when clicking a link
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
-    });
-  });
+  // // Close mobile menu when clicking a link
+  // document.querySelectorAll('.nav-links a, nav-cta a').forEach(link => {
+  //   link.addEventListener('click', () => {
+  //     hamburger.classList.remove('active');
+  //     navLinks.classList.remove('active');
+  //     navCta.classList.remove('active');
+  //   });
+  // });
 
+
+  
   // Form submission
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
@@ -119,3 +123,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
   observer.observe(document.querySelector('.skills-section'));
 });
+// Add this to your main script
+async function checkAdminStatus() {
+  try {
+    const res = await fetch('/api/login', { credentials: 'include' });
+    if (res.ok) {
+      document.getElementById('adminLink').style.display = 'block';
+    }
+  } catch (err) {
+    // Not logged in
+  }
+}
+
+document.addEventListener('DOMContentLoaded', checkAdminStatus);
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  const navCta = document.getElementById('nav-cta');
+
+  // Debugging: Check if elements exist
+  console.log('Hamburger:', hamburger);
+  console.log('NavLinks:', navLinks);
+  console.log('NavCTA:', navCta);
+
+  // Toggle menu function
+  const toggleMenu = () => {
+    const isOpen = navLinks.classList.contains('active');
+    navLinks.classList.toggle('active', !isOpen);
+    hamburger.classList.toggle('active', !isOpen);
+    navCta.classList.toggle('active', !isOpen);
+    document.body.style.overflow = isOpen ? 'auto' : 'hidden';
+    
+    // Debugging
+    console.log('Menu toggled:', !isOpen ? 'OPEN' : 'CLOSED');
+  };
+
+  // Hamburger click event
+  hamburger.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Close menu when clicking on links
+  document.querySelectorAll('.nav-links a, .nav-cta a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navLinks.classList.contains('active')) {
+        toggleMenu();
+      }
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') && 
+        !e.target.closest('#navbar') && 
+        !e.target.closest('.nav-cta')) {
+      toggleMenu();
+    }
+  });
