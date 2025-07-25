@@ -280,11 +280,11 @@ nav.scrolled {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   line-height: 1.2;
   margin-bottom: 20px;
   font-weight: 700;
-  font-size: 2.5rem;
+  /* font-size: 2.5rem; */
 }
 
 .text-gradient {
@@ -1311,11 +1311,13 @@ a{
   align-self: center;
   margin-top: 2rem;
 }
-
-
-
-
-
+#typingText {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--secondary-color);
+}
 
 
 

@@ -6,16 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 2000);
 
   // Typed.js initialization
-  const typed = new Typed('#element', {
-    strings: ['Full Stack Web Developer', 'frontend Developer', 'Backend Developer', 'In one word Web Developer', 'UI Designer', 'Problem Solver'],
-    typeSpeed: 50,
-    backSpeed: 30,
-    backDelay: 1500,
-    loop: true,
-    showCursor: true,
-    cursorChar: '|',
-    startDelay: 3500
-  });
+  // const typed = new Typed('#element', {
+  //   strings: ['Full Stack Web Developer', 'frontend Developer', 'Backend Developer', 'In one word Web Developer', 'UI Designer', 'Problem Solver'],
+  //   typeSpeed: 50,
+  //   backSpeed: 30,
+  //   backDelay: 1500,
+  //   loop: true,
+  //   showCursor: true,
+  //   cursorChar: '|',
+  //   startDelay: 3500
+  // });
+  new Typed('#typingText', {
+      strings: ['React', 'Node.js', 'MERN Stack', 'JavaScript', 'Web Development'],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 1500,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|'
+    });
 
   // Navbar scroll effect
   window.addEventListener('scroll', () => {
