@@ -1,15 +1,24 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ahmed Abrar | Projects</title>
+  <meta name="description" content="Portfolio showcasing Ahmed Abrar's web development projects">
+  <meta name="keywords" content="web development, portfolio, projects, frontend, JavaScript">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <!-- AOS Animation CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  
   <style>
     :root {
       --primary-color: #ff7e15;
@@ -19,6 +28,8 @@
       --darker-bg: #12123e;
       --text-color: #ffffff;
       --text-light: #cccccc;
+      --transition: all 0.3s ease;
+      --box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     }
 
     * {
@@ -27,11 +38,16 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: var(--dark-bg);
       color: var(--text-color);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     /* ===== Navigation ===== */
@@ -48,6 +64,11 @@
       z-index: 1000;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
       border-bottom: 1px solid rgba(110, 69, 226, 0.2);
+      transition: var(--transition);
+    }
+
+    .fixed-nav.scrolled {
+      padding: 0.7rem 5%;
     }
 
     .logo {
@@ -59,6 +80,11 @@
       color: var(--text-color);
       text-decoration: none;
       font-family: 'Tangerine', cursive;
+      transition: var(--transition);
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
     }
 
     .logo-img {
@@ -67,6 +93,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--primary-color);
+      transition: var(--transition);
     }
 
     .nav-links {
@@ -80,7 +107,7 @@
       text-decoration: none;
       font-weight: 500;
       font-size: 0.95rem;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       position: relative;
     }
 
@@ -108,6 +135,7 @@
       display: none;
       cursor: pointer;
       z-index: 1001;
+      padding: 10px;
     }
 
     .hamburger .line {
@@ -115,7 +143,7 @@
       height: 2px;
       background: var(--text-color);
       margin: 5px 0;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
 
     /* Mobile Menu Animation */
@@ -137,6 +165,7 @@
       background: var(--dark-bg);
       position: relative;
       overflow: hidden;
+      min-height: 100vh;
     }
 
     .projects-bg-shape {
@@ -188,6 +217,10 @@
       margin: 0 auto 40px;
       text-align: center;
       border-left: 4px solid #ff6b6b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
     /* Project Filters */
@@ -208,7 +241,7 @@
       padding: 8px 20px;
       border-radius: 30px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       font-size: 0.9rem;
       font-weight: 500;
     }
@@ -217,6 +250,7 @@
       background: var(--primary-color);
       color: white;
       transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 126, 21, 0.3);
     }
 
     /* Projects Grid */
@@ -232,15 +266,17 @@
       background: var(--darker-bg);
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--box-shadow);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       display: flex;
       flex-direction: column;
+      border: 1px solid rgba(255, 126, 21, 0.1);
     }
 
     .project-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 126, 21, 0.3);
     }
 
     .project-image-container {
@@ -296,6 +332,12 @@
       border-radius: 20px;
       font-size: 0.8rem;
       font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .tech-tag:hover {
+      background: rgba(255, 126, 21, 0.3);
+      transform: translateY(-2px);
     }
 
     .project-links {
@@ -310,7 +352,7 @@
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 500;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -319,11 +361,13 @@
     .btn-primary {
       background: var(--primary-color);
       color: #fff;
+      box-shadow: 0 4px 15px rgba(255, 126, 21, 0.3);
     }
 
     .btn-primary:hover {
       background: var(--primary-dark);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 126, 21, 0.4);
     }
 
     .btn-outline {
@@ -336,6 +380,54 @@
       background: var(--primary-color);
       color: white;
       transform: translateY(-2px);
+    }
+
+    /* Loading Spinner */
+    .loading-spinner {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 126, 21, 0.3);
+      border-radius: 50%;
+      border-top: 4px solid var(--primary-color);
+      animation: spin 1s linear infinite;
+      margin: 50px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
     }
 
     /* Responsive Adjustments */
@@ -379,6 +471,36 @@
         width: 100%;
         justify-content: center;
       }
+
+      .projects-bg-shape {
+        width: 300px;
+        height: 300px;
+        top: -50px;
+        right: -50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+      }
+
+      .project-filters {
+        gap: 8px;
+      }
+
+      .filter-btn {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -390,7 +512,7 @@
       <span>Ahmed Abrar</span>
     </a>
     
-    <div class="hamburger" id="hamburger">
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
@@ -423,14 +545,18 @@
       <button class="filter-btn" data-filter="animation">Animation</button>
       <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
       <button class="filter-btn" data-filter="game">Games</button>
+      <button class="filter-btn" data-filter="clone">Clones</button>
     </div>
 
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner"></div>
+
     <!-- Projects Grid -->
-    <div class="projects-grid">
+    <div class="projects-grid" id="projectsGrid">
       <!-- Project 1 -->
       <div class="project-card" data-aos="zoom-in" data-aos-delay="250" data-category="web animation">
         <div class="project-image-container">
-          <img src="images/NexaImg.png" alt="Nexa Marketing Website" class="project-image" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Nexa+Project'">
+          <img src="images/NexaImg.png" alt="Nexa Marketing Website" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Nexa+Project'">
         </div>
         <div class="project-info">
           <h3 class="project-title">Marketing Website Nexa</h3>
@@ -442,45 +568,45 @@
             <span class="tech-tag">GSAP</span>
           </div>
           <div class="project-links">
-            <a href="#" class="btn btn-primary">
+            <a href="https://programmer-aai.github.io/Marketing-Site-NEXA/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
               <i class="fas fa-external-link-alt"></i> Live Demo
             </a>
-            <a href="#" class="btn btn-outline">
+            <a href="https://github.com/Programmer-AAI" class="btn btn-outline">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
+       
+      <!-- Project 2 -->
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="web clone">
+        <div class="project-image-container">
+          <img src="images/proj10.jpeg" alt="Flappy Bird Game" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Flappy+Bird+Game'">
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">Amazon clone</h3>
+          <p class="project-description">A clone of the Amazon e-commerce platform.</p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://programmer-aai.github.io/Amazon-Clone/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/Programmer-AAI" class="btn btn-outline">
               <i class="fab fa-github"></i> Code
             </a>
           </div>
         </div>
       </div>
       
-      <!-- Project 2 -->
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="300" data-category="ecommerce web">
-        <div class="project-image-container">
-          <img src="images/proj1.jpeg" alt="Modern E-commerce Platform" class="project-image" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=E-commerce'">
-        </div>
-        <div class="project-info">
-          <h3 class="project-title">Modern E-commerce</h3>
-          <p class="project-description">An innovative e-commerce platform optimized for performance and user engagement.</p>
-          <div class="project-tech">
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">GSAP</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="btn btn-primary">
-              <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
-            <a href="#" class="btn btn-outline">
-              <i class="fab fa-github"></i> Code
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project 3 -->
+      <!-- Project 4 -->
       <div class="project-card" data-aos="zoom-in" data-aos-delay="350" data-category="ecommerce web">
         <div class="project-image-container">
-          <img src="images/proj4.jpeg" alt="Modern E-commerce Platform" class="project-image" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=E-commerce'">
+          <img src="images/proj4.jpeg" alt="Modern E-commerce Platform" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=E-commerce'">
         </div>
         <div class="project-info">
           <h3 class="project-title">Martial Arts Website</h3>
@@ -493,20 +619,20 @@
             <span class="tech-tag">Express.js</span>
           </div>
           <div class="project-links">
-            <a href="https://programmer-aai.github.io/Martial-Arts-Website/public/index.html" class="btn btn-primary" target="_blank">
+            <a href="https://programmer-aai.github.io/Martial-Arts-Website/public/index.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
               <i class="fas fa-external-link-alt"></i> Live Demo
             </a>
-            <a href="#" class="btn btn-outline">
+            <a href="https://github.com/Programmer-AAI" class="btn btn-outline">
               <i class="fab fa-github"></i> Code
             </a>
           </div>
         </div>
       </div>
       
-      <!-- Project 4 -->
+      <!-- Project 5 -->
       <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="game">
         <div class="project-image-container">
-          <img src="images/proj5.jpeg" alt="Flappy Bird Game" class="project-image" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Flappy+Bird+Game'">
+          <img src="images/proj5.jpeg" alt="Flappy Bird Game" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Flappy+Bird+Game'">
         </div>
         <div class="project-info">
           <h3 class="project-title">Flappy Bird Game</h3>
@@ -518,19 +644,20 @@
             <span class="tech-tag">Canvas API</span>
           </div>
           <div class="project-links">
-            <a href="#" class="btn btn-primary">
+            <a href="https://programmer-aai.github.io/flappy-Bird-Game/" class="btn btn-primary">
               <i class="fas fa-external-link-alt"></i> Live Demo
             </a>
-            <a href="#" class="btn btn-outline">
+            <a href="https://github.com/Programmer-AAI" class="btn btn-outline">
               <i class="fab fa-github"></i> Code
             </a>
           </div>
         </div>
       </div>
-      <!-- Project 5 -->
+      
+      <!-- Project 6 -->
       <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="web">
         <div class="project-image-container">
-          <img src="images/proj6.jpeg" alt="Flappy Bird Game" class="project-image" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Flappy+Bird+Game'">
+          <img src="images/proj6.jpeg" alt="Flappy Bird Game" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Flappy+Bird+Game'">
         </div>
         <div class="project-info">
           <h3 class="project-title">Business Website</h3>
@@ -541,19 +668,20 @@
             <span class="tech-tag">JavaScript</span>
           </div>
           <div class="project-links">
-            <a href="#" class="btn btn-primary">
+            <a href="https://programmer-aai.github.io/Business-Web/" class="btn btn-primary">
               <i class="fas fa-external-link-alt"></i> Live Demo
             </a>
-            <a href="#" class="btn btn-outline">
+            <a href="https://github.com/Programmer-AAI" class="btn btn-outline">
               <i class="fab fa-github"></i> Code
             </a>
           </div>
         </div>
       </div>
-
+      
+      <!-- Project 7 -->
       <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="web ecommerce">
         <div class="project-image-container">
-          <img src="images/proj7.jpeg" alt="Flappy Bird Game" class="project-image" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Flappy+Bird+Game'">
+          <img src="images/proj7.jpeg" alt="Flappy Bird Game" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Flappy+Bird+Game'">
         </div>
         <div class="project-info">
           <h3 class="project-title">Zoom Store</h3>
@@ -567,18 +695,20 @@
             <span class="tech-tag">MongoDB</span>
           </div>
           <div class="project-links">
-            <a href="https://zoom-site.onrender.com" class="btn btn-primary">
+            <a href="https://zoom-site.onrender.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
               <i class="fas fa-external-link-alt"></i> Live Demo
             </a>
-            <a href="#" class="btn btn-outline">
+            <a href="https://github.com/Programmer-AAI" class="btn btn-outline">
               <i class="fab fa-github"></i> Code
             </a>
           </div>
         </div>
       </div>
-       <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="web ecommerce">
+      
+      <!-- Project 8 -->
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="web ecommerce">
         <div class="project-image-container">
-          <img src="images/proj8.jpeg" alt="Flappy Bird Game" class="project-image" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Flappy+Bird+Game'">
+          <img src="images/proj8.jpeg" alt="Ice Cream Shop" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Ice+Cream+Shop'">
         </div>
         <div class="project-info">
           <h3 class="project-title">Ice Cream Shop</h3>
@@ -589,18 +719,20 @@
             <span class="tech-tag">JavaScript</span>
           </div>
           <div class="project-links">
-            <a href="https://zoom-site.onrender.com" class="btn btn-primary">
+            <a href="https://zoom-site.onrender.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
               <i class="fas fa-external-link-alt"></i> Live Demo
             </a>
-            <a href="#" class="btn btn-outline">
+            <a href="https://github.com/Programmer-AAI" class="btn btn-outline">
               <i class="fab fa-github"></i> Code
             </a>
           </div>
         </div>
       </div>
-       <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="web ecommerce">
+      
+      <!-- Project 9 -->
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="web ecommerce">
         <div class="project-image-container">
-          <img src="images/proj9.jpeg" alt="Flappy Bird Game" class="project-image" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Flappy+Bird+Game'">
+          <img src="images/proj9.jpeg" alt="Flappy Bird Game" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Flappy+Bird+Game'">
         </div>
         <div class="project-info">
           <h3 class="project-title">Coffee Shop</h3>
@@ -611,7 +743,32 @@
             <span class="tech-tag">JavaScript</span>
           </div>
           <div class="project-links">
-            <a href="https://zoom-site.onrender.com" class="btn btn-primary">
+            <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/Programmer-AAI" class="btn btn-outline">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 10 -->
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="400" data-category="web ecommerce">
+        <div class="project-image-container">
+          <img src="images/proj11.jpeg" alt="E-Commerce-coding-service" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Flappy+Bird+Game'">
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">Coding Service</h3>
+          <p class="project-description">A platform offering coding services and solutions.</p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Bootstrap</span>
+          </div>
+          <div class="project-links">
+            <a href="http://programmer-aai.github.io/E-Commerce-coding-service/E-Commerce-coding-service/src/index.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
               <i class="fas fa-external-link-alt"></i> Live Demo
             </a>
             <a href="#" class="btn btn-outline">
@@ -623,117 +780,175 @@
     </div>
   </section>
 
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  // Initialize AOS
-  AOS.init({
-    duration: 1000,
-    once: true,
-    easing: 'ease-out-quad'
-  });
-
-  // Mobile Menu Toggle
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
-
-  // Close menu when clicking a link
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out-quad'
     });
-  });
 
-  // API Base URL
-  const API_BASE_URL = 'http://localhost:5000/api';
-  
-  // Fetch and display projects
-  async function loadProjects() {
-    try {
-      const response = await fetch(`${API_BASE_URL}/projects`);
-      const projects = await response.json();
-      
-      const projectsGrid = document.querySelector('.projects-grid');
-      projectsGrid.innerHTML = '';
-      
-      projects.forEach(project => {
-        const projectCard = document.createElement('div');
-        projectCard.className = 'project-card';
-        projectCard.setAttribute('data-aos', 'zoom-in');
-        projectCard.setAttribute('data-category', project.categories.join(' '));
-        
-        projectCard.innerHTML = `
-          <div class="project-image-container">
-            <img src="${project.imageUrl}" alt="${project.title}" class="project-image" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Project+Image'">
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">${project.title}</h3>
-            <p class="project-description">${project.description}</p>
-            <div class="project-tech">
-              ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-            </div>
-            <div class="project-links">
-              ${project.demoUrl ? `<a href="${project.demoUrl}" class="btn btn-primary" target="_blank">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>` : ''}
-              ${project.codeUrl ? `<a href="${project.codeUrl}" class="btn btn-outline" target="_blank">
-                <i class="fab fa-github"></i> Code
-              </a>` : ''}
-            </div>
-          </div>
-        `;
-        
-        projectsGrid.appendChild(projectCard);
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
       });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      backToTopBtn.classList.toggle('visible', window.scrollY > 300);
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // API Base URL
+    const API_BASE_URL = 'https://api.example.com/projects';
+    
+    // Fetch and display projects
+    async function loadProjects() {
+      const loadingSpinner = document.getElementById('loadingSpinner');
+      const projectsGrid = document.getElementById('projectsGrid');
       
-      // Reinitialize AOS for new elements
-      if (typeof AOS !== 'undefined') {
-        AOS.refresh();
+      try {
+        loadingSpinner.style.display = 'block';
+        projectsGrid.style.display = 'none';
+        
+        const response = await fetch(API_BASE_URL);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const projects = await response.json();
+        
+        // If API returns no projects, fall back to static content
+        if (!projects || projects.length === 0) {
+          projectsGrid.style.display = 'grid';
+          loadingSpinner.style.display = 'none';
+          initializeFiltering();
+          return;
+        }
+        
+        projectsGrid.innerHTML = '';
+        
+        projects.forEach((project, index) => {
+          const projectCard = document.createElement('div');
+          projectCard.className = 'project-card';
+          projectCard.setAttribute('data-aos', 'zoom-in');
+          projectCard.setAttribute('data-aos-delay', 250 + (index * 50));
+          projectCard.setAttribute('data-category', project.categories.join(' '));
+          
+          projectCard.innerHTML = `
+            <div class="project-image-container">
+              <img src="${project.imageUrl}" alt="${project.title}" class="project-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250/12123e/6e45e2?text=Project+Image'">
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">${project.title}</h3>
+              <p class="project-description">${project.description}</p>
+              <div class="project-tech">
+                ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+              </div>
+              <div class="project-links">
+                ${project.demoUrl ? `<a href="${project.demoUrl}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>` : ''}
+                ${project.codeUrl ? `<a href="${project.codeUrl}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i> Code
+                </a>` : ''}
+              </div>
+            </div>
+          `;
+          
+          projectsGrid.appendChild(projectCard);
+        });
+        
+        projectsGrid.style.display = 'grid';
+        loadingSpinner.style.display = 'none';
+        
+        // Reinitialize AOS for new elements
+        if (typeof AOS !== 'undefined') {
+          AOS.refresh();
+        }
+        
+        // Initialize filtering after projects are loaded
+        initializeFiltering();
+      } catch (err) {
+        console.error('Error loading projects:', err);
+        // Fallback to static projects if API fails
+        projectsGrid.style.display = 'grid';
+        loadingSpinner.style.display = 'none';
+        initializeFiltering();
       }
-      
-      // Initialize filtering after projects are loaded
-      initializeFiltering();
-    } catch (err) {
-      console.error('Error loading projects:', err);
-      // Fallback to static projects if API fails
-      initializeFiltering();
     }
-  }
-  
-  // Initialize project filtering functionality
-  function initializeFiltering() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+    
+    // Initialize project filtering functionality
+    function initializeFiltering() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Update active button
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Update active button
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
 
-        const filter = btn.dataset.filter;
+          const filter = btn.dataset.filter;
 
-        // Filter projects
-        projectCards.forEach(card => {
-          const categories = card.dataset.category.split(' ');
-          if (filter === 'all' || categories.includes(filter)) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
+          // Filter projects
+          projectCards.forEach(card => {
+            const categories = card.dataset.category.split(' ');
+            if (filter === 'all' || categories.includes(filter)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
         });
       });
-    });
-  }
+    }
 
-  // Load projects when page loads
-  document.addEventListener('DOMContentLoaded', loadProjects);
-</script>
+    // Load projects when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      // Show static content immediately
+      initializeFiltering();
+      
+      // Then attempt to load from API
+      setTimeout(loadProjects, 0);
+    });
+    let empBtn = document.querySelector('.');
+  </script>
 </body>
 </html>

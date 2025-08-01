@@ -34,7 +34,11 @@ body {
   background-color: var(--dark-bg);
   overflow-x: hidden;
 }
-
+nav a span {
+  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 700;
+}
 /* Intro Animation */
 .intro-animation {
   position: fixed;
@@ -154,14 +158,14 @@ nav.scrolled {
   box-shadow: 0 0 15px var(--primary-color);
 }
 
-.logo-text2 {
+/* .logo-text2 {
   font-family: 'Tangerine', cursive;
   font-size: 2rem;
   color: var(--primary-color);
   font-weight: 700;
   background: linear-gradient(to right, var(--primary), var(--secondary));
   
-}
+} */
 
 .nav-links {
   display: flex;
@@ -371,6 +375,7 @@ nav.scrolled {
 .hero-image {
   flex: 1;
   min-width: 300px;
+  max-width: 430px;
   position: relative;
 }
 
@@ -383,7 +388,7 @@ nav.scrolled {
 .profile-image {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); 
   position: relative;
   z-index: 1;
 }
@@ -1318,6 +1323,4 @@ a{
   margin-top: 1rem;
   color: var(--secondary-color);
 }
-
-
 
