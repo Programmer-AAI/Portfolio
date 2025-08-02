@@ -265,8 +265,17 @@ nav.scrolled {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; 
   gap: 40px;
+  opacity: 0;
+  filter: blur(20px);
+  animation: showContent .5s 3s linear 1 forwards;
+}
+@keyframes showContent {
+  to{
+    opacity: 1;
+    filter: blur(0); 
+  }
 }
 
 .hero-text {
@@ -391,6 +400,7 @@ nav.scrolled {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); 
   position: relative;
   z-index: 1;
+  border: 2px solid black;
 }
 
 .tech-stack {
